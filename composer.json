@@ -1,5 +1,5 @@
 {
-    "name": "tmartone/google-calendar",
+    "name": "tmartone/laravel-google-calendar",
     "description": "Laravel Google Calendar Integration",
     "type": "library",
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"tmartone\\GoogleCalendar\\": "src/"}
+        "psr-4": {"tmartone\\LaravelGoogleCalendar\\": "src/"}
     },
     "require": {}
 }

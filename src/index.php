@@ -1,6 +1,6 @@
 <?php 
 
-namespace tmartone\GoogleCalendar;
+namespace tmartone\LaravelGoogleCalendar;
 
 class Index
 {
