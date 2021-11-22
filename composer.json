@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "tmartone\\LaravelGoogleCalendar\\": "src/"
+            "tmartone\\LaravelGoogleCalendar\\": "src"
         }
     },
     "extra": {
@@ -30,5 +30,8 @@
                 "LaravelGoogleCalendar": "tmartone\\LaravelGoogleCalendar\\Facade"
             }
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
