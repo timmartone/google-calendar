@@ -29,6 +29,8 @@ class GoogleCalendarServiceProvider extends ServiceProvider
             return GoogleCalendarFactory::createForCalendarId($config['default_calendar_id']);
         });
 
+        $this->app->register('tmartone\LaravelGoogleCalendar');
+
         $this->app->router->aliasMiddleware('google_consent', \tmartone\LaravelGoogleCalendar\Http\Middleware\GoogleAuthConsent::class);
 
         $this->app->alias(GoogleCalendar::class, 'laravel-google-calendar');
