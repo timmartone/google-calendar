@@ -10,8 +10,15 @@
         }
     ],
     "minimum-stability": "stable",
-    "autoload": {
-        "psr-4": {"tmartone\\LaravelGoogleCalendar\\": "src/"}
+    "require": {
+        "php": "^7.2|^8.0",
+        "google/apiclient": "^2.11",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "nesbot/carbon": "^2.0"
     },
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "tmartone\\LaravelGoogleCalendar\\": "src/"
+        }
+    }
 }
