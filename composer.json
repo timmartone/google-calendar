@@ -16,6 +16,16 @@
         "illuminate/support": "^6.0|^7.0|^8.0",
         "nesbot/carbon": "^2.0"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "tmartone\\LaravelGoogleCalendar\\ServiceProvider"
+            ],
+            "aliases": {
+                "LaravelGoogleCalendar": "tmartone\\LaravelGoogleCalendar\\Facade"
+            }
+        }
+    },
     "autoload": {
         "psr-4": {
             "tmartone\\LaravelGoogleCalendar\\": "src/"
