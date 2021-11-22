@@ -2,8 +2,9 @@
 
 namespace tmartone\LaravelGoogleCalendar;
 
-use App\Models\User;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Redirect;
+use tmartone\LaravelGoogleCalendar\GoogleAuth;
 use tmartone\LaravelGoogleCalendar\Exceptions\InvalidConfiguration;
 
 class GoogleCalendarServiceProvider extends ServiceProvider
@@ -26,6 +27,19 @@ class GoogleCalendarServiceProvider extends ServiceProvider
             $config = config('google-calendar');
             $this->guardAgainstInvalidConfiguration($config);
 
+            $profile = config('google-calendar.default_auth_profile');
+
+            if($profile == 'oauth_consent')
+            {
+                $user = auth()->user();
+                if(!$user->google_auth)
+                {
+                    $client = GoogleAuth::index();
+                    if(gettype($client) == "array")
+                        return Redirect::to($client['url']);
+                }
+            }
+            
             return GoogleCalendarFactory::createForCalendarId($config['default_calendar_id']);
         });
 
